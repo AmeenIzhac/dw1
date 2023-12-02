@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
 
-function App() {
+const App = () => {
+  // State to store the input box value
+  const [inputValue, setInputValue] = useState('');
+  const [text, setText] = useState('');
+
+  // Function to update the state when input changes
+  const handleInputChange = (event) => {
+    if (parseInt(event.target.value) == 12) {
+      setText("you can get the reward from x office");
+    } else {
+      setText("how have you still not figured it out?");
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {/* Input box with onChange event */}
+      <input type="text" onChange={handleInputChange} />
+
+      {/* <p> tag whose text content is dynamically updated */}
+      <p>{text}</p>
     </div>
   );
-}
+};
 
 export default App;
