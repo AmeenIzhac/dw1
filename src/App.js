@@ -15,9 +15,10 @@ const App = () => {
   };
 
   return (
-    <div>
+    <div style={{display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", height:"50vh"}}>
       {/* Input box with onChange event */}
-      <input type="text" onChange={handleInputChange} />
+      <h1>Took you long enough</h1>
+      <input type="text" style={{width:"20vw", height:"5vh", padding: "0px 20px 0px 20px"}} onChange={handleInputChange} />
 
       {/* <p> tag whose text content is dynamically updated */}
       <p>{text}</p>
